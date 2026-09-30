@@ -32,6 +32,8 @@ import android.telephony.SubscriptionManager
 import android.telephony.TelephonyManager
 import android.telephony.TelephonyManager.PHONE_TYPE_GSM
 import android.util.Log
+import android.view.WindowManagerPolicyConstants.NAV_BAR_MODE_GESTURAL
+import android.view.WindowManagerPolicyConstants.NAV_BAR_MODE_GESTURAL_OVERLAY
 import com.google.android.setupcompat.util.ResultCodes.RESULT_SKIP
 import java.io.File
 import org.json.JSONObject
@@ -136,6 +138,7 @@ object SetupWizardUtils {
     fun isPackageInstalled(context: Context, packageName: String): Boolean =
         runCatching { context.packageManager.getPackageInfo(packageName, GET_ACTIVITIES) }.isSuccess
 
+
     fun isGmsCoreInstalled(context: Context): Boolean = isPackageInstalled(context, GMS_PACKAGE)
 
     fun isNetworkConnectedToInternet(context: Context): Boolean {
@@ -144,6 +147,29 @@ object SetupWizardUtils {
         return networkCapabilities != null &&
             networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET) &&
             networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED)
+    }
+
+
+    fun enableGesturalNavigation(context: Context) {
+        if (isManagedProfile(context)) {
+            return
+        }
+        if (!isPackageInstalled(context, NAV_BAR_MODE_GESTURAL_OVERLAY)) {
+            return
+        }
+        val navigationMode =
+            Settings.Secure.getInt(context.contentResolver, Settings.Secure.NAVIGATION_MODE, 0)
+        if (navigationMode == NAV_BAR_MODE_GESTURAL) {
+            return
+        }
+        val overlayManager =
+            IOverlayManager.Stub.asInterface(ServiceManager.getService(Context.OVERLAY_SERVICE))
+        runCatching {
+            overlayManager.setEnabledExclusiveInCategory(
+                NAV_BAR_MODE_GESTURAL_OVERLAY,
+                UserHandle.USER_CURRENT,
+            )
+        }
     }
 
     private fun restoreWallpaperColorSource(contentResolver: ContentResolver) {
