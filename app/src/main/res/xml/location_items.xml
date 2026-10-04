@@ -18,4 +18,32 @@
         android:summary="@string/location_agps_access_summary"
         android:title="@string/location_agps_access_title" />
 
+    <SectionItem
+        android:id="@+id/location_gps_section"
+        android:title="@string/location_category_gps">
+
+        <Item
+            android:id="@+id/location_supl_item"
+            android:title="@string/location_supl_title" />
+
+        <Item
+            android:id="@+id/location_psds_item"
+            android:title="@string/location_psds_title" />
+
+    </SectionItem>
+
+    <SectionItem
+        android:id="@+id/location_services_section"
+        android:title="@string/location_category_services">
+
+        <Item
+            android:id="@+id/location_network_item"
+            android:title="@string/location_network_title" />
+
+        <Item
+            android:id="@+id/location_geocoder_item"
+            android:title="@string/location_geocoder_title" />
+
+    </SectionItem>
+
 </ItemGroup>

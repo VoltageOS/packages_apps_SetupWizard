@@ -405,8 +405,8 @@ class FinishActivity : BaseSetupWizardActivity() {
     companion object {
         private const val TAG = "FinishActivity"
 
-        private const val MARK_CENTER_X = 256f / 512f
-        private const val MARK_CENTER_Y = 128f / 260f
+        private const val MARK_CENTER_X = 200f / 400f
+        private const val MARK_CENTER_Y = 200f / 400f
 
         private const val ENTRANCE_HINT_DELAY_MS = 150L
         private const val ENTRANCE_STAGGER_MS = 80L

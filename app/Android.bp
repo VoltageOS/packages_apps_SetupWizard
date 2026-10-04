@@ -4,7 +4,7 @@
 //
 
 android_app {
-    name: "LineageSetupWizard",
+    name: "VoltageSetupWizard",
 
     srcs: ["src/main/java/**/*.kt"],
     resource_dirs: ["src/main/res"],
@@ -12,7 +12,7 @@ android_app {
 
     certificate: "platform",
     privileged: true,
-    privapp_allowlist: "org.lineageos.setupwizard.xml",
+    privapp_allowlist: "com.voltageos.setupwizard.xml",
     system_ext_specific: true,
     platform_apis: true,
 
@@ -31,7 +31,6 @@ android_app {
         "setupdesign-lottie-animation-view",
         "SystemUISharedLib",
         "zxing-core",
-        "org.lineageos.platform.internal",
     ],
 
     libs: ["telephony-common"],

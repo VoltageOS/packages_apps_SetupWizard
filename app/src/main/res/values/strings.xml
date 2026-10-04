@@ -6,7 +6,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Setup Wizard</string>
-    <string name="os_name" translatable="false">LineageOS</string>
+    <string name="os_name" translatable="false">VoltageOS</string>
 
     <string name="lineage_wizard_script_uri" translatable="false">android.resource://org.lineageos.setupwizard/raw/lineage_wizard_script</string>
     <string name="lineage_wizard_script_user_uri" translatable="false">android.resource://org.lineageos.setupwizard/raw/lineage_wizard_script_user</string>
@@ -23,7 +23,7 @@
     <string name="loading">Just a sec\u2026</string>
 
     <!-- Welcome page -->
-    <string name="setup_welcome_message">Welcome to <xliff:g id="name" example="LineageOS">%1$s</xliff:g></string>
+    <string name="setup_welcome_message">Welcome to <xliff:g id="name" example="VoltageOS">%1$s</xliff:g></string>
     <string name="setup_managed_profile_welcome_message">Set up your work profile</string>
     <string name="emergency_call">Emergency call</string>
     <string name="accessibility_settings">Accessibility settings</string>
@@ -60,7 +60,7 @@
 
     <!-- Restore backup page -->
     <string name="intro_restore_title">Restore apps and data</string>
-    <string name="intro_restore_subtitle">If you have a Seedvault backup from <xliff:g id="name" example="LineageOS">%s</xliff:g> or any other OS, you can restore it here.</string>
+    <string name="intro_restore_subtitle">If you have a Seedvault backup from <xliff:g id="name" example="VoltageOS">%s</xliff:g> or any other OS, you can restore it here.</string>
     <string name="intro_restore_button">Restore from backup</string>
 
     <!-- Location page -->
@@ -70,21 +70,53 @@
     <string name="location_agps_access_title">Enhanced location</string>
     <string name="location_access_summary">Allow apps that have asked your permission to use your location information. This may include your current location and past locations.</string>
     <string name="location_agps_access_summary">When location is on, download satellite assistance data from the internet, which can greatly improve the GPS startup performance.</string>
+    <string name="location_category_gps">GPS</string>
+    <string name="location_category_services">Other services</string>
+    <string name="location_supl_title">Secure User Plane Location (SUPL)</string>
+    <string name="location_supl_desc">A-GNSS (assisted satellite geolocation) based on nearby cell towers. Turning this off makes acquiring a location lock significantly slower.</string>
+    <string name="location_supl_grapheneos_proxy">GrapheneOS proxy</string>
+    <string name="location_supl_standard_server">Standard server</string>
+    <string name="location_supl_off">Off</string>
+    <string name="location_psds_title">Predicted Satellite Data Service (PSDS)</string>
+    <string name="location_psds_desc">Periodically download static files containing satellite orbits, satellite statuses and time adjustment information. No query or data about you is sent to the server. Requires assisted GPS above to stay on.</string>
+    <string name="location_psds_grapheneos_server">GrapheneOS server</string>
+    <string name="location_psds_standard_server">Standard server</string>
+    <string name="location_psds_off">Off</string>
+    <string name="location_network_title">Network location</string>
+    <string name="location_network_desc">Estimate your location from nearby Wi-Fi networks and cell towers, which is useful indoors or before a satellite lock is acquired.</string>
+    <string name="location_network_grapheneos_apple_proxy">GrapheneOS Apple proxy</string>
+    <string name="location_network_apple">Apple server</string>
+    <string name="location_network_apple_china">Apple China server (required for China data)</string>
+    <string name="location_network_off">Off</string>
+    <string name="location_geocoder_title">Geocoder</string>
+    <string name="location_geocoder_desc">Translate coordinates into addresses and place names, and the other way around. Queries are sent to the selected server.</string>
+    <string name="location_geocoder_grapheneos_server">GrapheneOS server</string>
+    <string name="location_geocoder_openstreetmap">OpenStreetMap (Nominatim) server</string>
+    <string name="location_geocoder_off">Off</string>
+
+    <!-- App store page -->
+    <string name="setup_appstore">App store</string>
+    <string name="appstore_description">Google Play is not installed on this device. The GrapheneOS App Store lets you install sandboxed Google Play and other apps without privileged access. You can skip this and install it later.</string>
+    <string name="appstore_install">Download and install</string>
+    <string name="appstore_downloading">Downloading\u2026</string>
+    <string name="appstore_installing">Installing\u2026</string>
+    <string name="appstore_installed">Installed</string>
+    <string name="appstore_failed">Could not download the App Store. Check your connection and try again.</string>
 
     <!-- Recovery update page -->
-    <string name="update_recovery_title">Update Lineage Recovery</string>
-    <string name="update_recovery_description">Updates Lineage Recovery on first boot subsequent to every update.</string>
+    <string name="update_recovery_title">Update Voltage Recovery</string>
+    <string name="update_recovery_description">Updates Voltage Recovery on first boot subsequent to every update.</string>
     <string name="update_recovery_warning">Recovery will be updated as soon as you finish the setup. If you wish to keep it intact, disable this feature.</string>
-    <string name="update_recovery_setting">Update Lineage Recovery alongside the OS</string>
+    <string name="update_recovery_setting">Update Voltage Recovery alongside the OS</string>
     <string name="update_recovery_full_description"><xliff:g id="recovery_update_description">%1$s</xliff:g>\n<xliff:g id="recovery_update_warning">%2$s</xliff:g></string>
 
-    <!-- LineageOS features page -->
-    <string name="setup_services">LineageOS features</string>
-    <string name="services_pp_explanation">These services work for you to extend the capabilities of your device. Data will be used in accordance with <xliff:g id="name" example="LineageOS">%1$s</xliff:g>\'s privacy policy.</string>
+    <!-- VoltageOS features page -->
+    <string name="setup_services">VoltageOS features</string>
+    <string name="services_pp_explanation">These services work for you to extend the capabilities of your device. Data will be used in accordance with <xliff:g id="name" example="VoltageOS">%1$s</xliff:g>\'s privacy policy.</string>
     <string name="services_find_privacy_policy">You can read the privacy policy on another device by visiting:</string>
     <string name="services_privacy_policy_uri" translatable="false"><b>https://lineageos.org/legal</b></string>
-    <string name="services_help_improve_cm">Help improve <xliff:g id="name" example="LineageOS">%s</xliff:g></string>
-    <string name="services_metrics_label"><xliff:g id="name" example="Help improve LineageOS">%1$s</xliff:g> by automatically sending diagnostic and usage data to <xliff:g id="name" example="LineageOS">%2$s</xliff:g>. This information can’t be used to identify you and lends a hand to teams working on things like battery life, app performance, and new <xliff:g id="name" example="LineageOS">%3$s</xliff:g> features.</string>
+    <string name="services_help_improve_cm">Help improve <xliff:g id="name" example="VoltageOS">%s</xliff:g></string>
+    <string name="services_metrics_label"><xliff:g id="name" example="Help improve VoltageOS">%1$s</xliff:g> by automatically sending diagnostic and usage data to <xliff:g id="name" example="VoltageOS">%2$s</xliff:g>. This information can’t be used to identify you and lends a hand to teams working on things like battery life, app performance, and new <xliff:g id="name" example="VoltageOS">%3$s</xliff:g> features.</string>
     <string name="services_metrics_title">Contribute diagnostic data</string>
     <string name="services_os_nav_keys_label"><b>Use on screen navigation keys</b> instead of hardware keys.</string>
     <string name="services_full_description"><xliff:g id="pp_explanation">%1$s</xliff:g>\n<xliff:g id="pp_find">%2$s</xliff:g></string>
